@@ -1,1 +1,6 @@
-kjsabhdkjsabndjklasnd
+Database
+  Use of input mask on items email to contain @ .domain and phone numbers
+    check contstraint that it matches input mask
+  Contact number are we accepting home and cell ? If so check contstraint that one is not null eg.
+       CONSTRAINT at_least_one_number_not_null 
+        CHECK (home_number IS NOT NULL OR cell_number IS NOT NULL) 
