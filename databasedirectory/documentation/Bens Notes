@@ -6,3 +6,10 @@ Database
         CHECK (home_number IS NOT NULL OR cell_number IS NOT NULL)
 
   Check on rating system between 0-5 add constraint to only allow whole numbers 0,1,2,3,4,5
+
+
+SQL Injection Test
+    Test basic SQL injection on form input eg.
+        username: 105 OR 1=1 (can return list of all users)
+        username: 105; DROP TABLE tblReview (can drop tables)
+        password: <"anything">
