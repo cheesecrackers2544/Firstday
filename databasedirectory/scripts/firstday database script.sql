@@ -17,13 +17,27 @@ ServicesOffered TEXT
 );
 - - Create 'Listings' table
 CREATE TABLE Listings (
-ListingID INT AUTO_INCREMENT PRIMARY KEY,
-ProviderID INT,
-Title VARCHAR(255) NOT NULL,
-Description TEXT,
-Price DECIMAL(10, 2),
-AgeGroup VARCHAR(50),
-FOREIGN KEY (ProviderID) REFERENCES Provider_Profiles(ProviderID)
+    ListingID INT PRIMARY KEY,
+    Title VARCHAR(255) NOT NULL, -- Service Name
+    Telephone VARCHAR(20),
+    Email VARCHAR(255),
+    StreetAddress VARCHAR(255),
+    Suburb VARCHAR(100),
+    TownCity VARCHAR(100),
+    ServiceType VARCHAR(100),
+    HoursECE VARCHAR(3),
+    AreaUnit VARCHAR(100),
+    Latitude DECIMAL(9,6),
+    Longitude DECIMAL(9,6),
+    MaxLicensedPositions INT,
+    CapacityUnder2s INT,
+    CapacityAge0 INT,
+    CapacityAge1 INT,
+    CapacityAge2 INT,
+    CapacityAge3 INT,
+    CapacityAge4 INT,
+    CapacityAge5 INT,
+    TotalCapacity INT,
 );
 - - Create 'Reviews' table
 CREATE TABLE Reviews (
