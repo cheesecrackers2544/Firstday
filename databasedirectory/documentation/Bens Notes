@@ -6,7 +6,6 @@ Database
         CHECK (home_number IS NOT NULL OR cell_number IS NOT NULL)
 
   Check on rating system between 0-5 add constraint to only allow whole numbers 0,1,2,3,4,5
-  Merge both provider and parent profiles to user table - specify differences with a parent/provider set feild
 
 SQL Injection Test
     Test basic SQL injection on form input eg.
