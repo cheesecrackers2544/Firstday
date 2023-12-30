@@ -37,7 +37,7 @@ CREATE TABLE Listings (
     CapacityAge3 INT,
     CapacityAge4 INT,
     CapacityAge5 INT,
-    TotalCapacity INT,
+    TotalCapacity INT
 );
 -- Create 'Reviews' table
 CREATE TABLE Reviews (
