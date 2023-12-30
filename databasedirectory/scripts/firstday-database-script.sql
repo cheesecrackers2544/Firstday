@@ -17,7 +17,7 @@ ServicesOffered TEXT
 );
 -- Create 'Listings' table
 CREATE TABLE Listings (
-    ListingID INT PRIMARY KEY,
+    ListingID INT AUTO_INCREMENT PRIMARY KEY,
     Title VARCHAR(255) NOT NULL, -- Service Name
     Telephone VARCHAR(20),
     Email VARCHAR(255),
