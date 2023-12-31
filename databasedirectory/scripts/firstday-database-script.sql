@@ -10,6 +10,7 @@ CREATE TABLE Owner_Profiles (
     OwnerID INT AUTO_INCREMENT PRIMARY KEY,
     ManagementContactName VARCHAR(255) NOT NULL,
     ManagementContactPhone VARCHAR(20)
+    OwnerEmail VARCHAR(255) UNIQUE,
 );
 -- Create 'Listings' table
 CREATE TABLE Listings (
