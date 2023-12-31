@@ -12,5 +12,5 @@
             <a href="index.php" style="color: inherit; text-decoration: none;">Firstday Logo</a>
         </div>
         <nav>
-            <a href="#">Sign in / Sign up</a>
+            <a href="sign-in-sign-up-page">Sign in / Sign up</a>
     </header>
