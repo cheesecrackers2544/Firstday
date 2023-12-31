@@ -20,16 +20,6 @@
             </form>
         </div>
     </main>
-
-    <footer>
-        <a href="about-us.php">About Us</a> - 
-        <a href="#">Contact</a> - 
-        <a href="#">Terms and Conditions</a> - 
-        <a href="#">Privacy Policy</a> - 
-        <a href="#">Cookies Settings</a> - 
-        <a href="#">Site Map</a>
-    </footer>
-    
+    <?php include 'footer.php'; ?>
 </body>
 </html>
-<?php include 'footer.php'; ?>
