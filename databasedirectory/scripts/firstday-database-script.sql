@@ -3,13 +3,13 @@ CREATE TABLE Parent_Profiles (
 ParentID INT AUTO_INCREMENT PRIMARY KEY,
 Name VARCHAR(255) NOT NULL,
 Email VARCHAR(255) NOT NULL UNIQUE,
-ContactNumber VARCHAR(20),
+ContactNumber VARCHAR(20)
 );
 -- Create 'Owner_Profiles' table
 CREATE TABLE Owner_Profiles (
     OwnerID INT AUTO_INCREMENT PRIMARY KEY,
     ManagementContactName VARCHAR(255) NOT NULL,
-    ManagementContactPhone VARCHAR(20),
+    ManagementContactPhone VARCHAR(20)
 );
 -- Create 'Listings' table
 CREATE TABLE Listings (
@@ -39,7 +39,7 @@ CREATE TABLE Listings (
     CapacityAge4 INT,
     CapacityAge5 INT,
     TotalCapacity INT,
-    FOREIGN KEY (OwnerID) REFERENCES Owner_Profiles(OwnerID),
+    FOREIGN KEY (OwnerID) REFERENCES Owner_Profiles(OwnerID)
 );
 
 -- Create 'Reviews' table
