@@ -1,4 +1,4 @@
-- - Create 'Parent_Profiles' table
+-- Create 'Parent_Profiles' table
 CREATE TABLE Parent_Profiles (
 ParentID INT AUTO_INCREMENT PRIMARY KEY,
 Name VARCHAR(255) NOT NULL,
@@ -6,7 +6,7 @@ Email VARCHAR(255) NOT NULL UNIQUE,
 ContactNumber VARCHAR(20),
 Preferences TEXT
 );
-- - Create 'Provider_Profiles' table
+-- Create 'Provider_Profiles' table
 CREATE TABLE Provider_Profiles (
 ProviderID INT AUTO_INCREMENT PRIMARY KEY,
 Name VARCHAR(255) NOT NULL,
@@ -15,9 +15,9 @@ ContactNumber VARCHAR(20),
 Qualifications TEXT,
 ServicesOffered TEXT
 );
-- - Create 'Listings' table
+-- Create 'Listings' table
 CREATE TABLE Listings (
-    ListingID INT PRIMARY KEY,
+    ListingID INT AUTO_INCREMENT PRIMARY KEY,
     Title VARCHAR(255) NOT NULL, -- Service Name
     Telephone VARCHAR(20),
     Email VARCHAR(255),
@@ -37,9 +37,9 @@ CREATE TABLE Listings (
     CapacityAge3 INT,
     CapacityAge4 INT,
     CapacityAge5 INT,
-    TotalCapacity INT,
+    TotalCapacity INT
 );
-- - Create 'Reviews' table
+-- Create 'Reviews' table
 CREATE TABLE Reviews (
 ReviewID INT AUTO_INCREMENT PRIMARY KEY,
 ParentID INT,
@@ -49,7 +49,7 @@ Rating INT,
 FOREIGN KEY (ParentID) REFERENCES Parent_Profiles(ParentID),
 FOREIGN KEY (ListingID) REFERENCES Listings(ListingID)
 );
-- - Create 'User_Interactions' table
+-- Create 'User_Interactions' table
 CREATE TABLE User_Interactions (
 InteractionID INT AUTO_INCREMENT PRIMARY KEY,
 UserID INT,
