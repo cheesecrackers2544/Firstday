@@ -4,21 +4,20 @@ ParentID INT AUTO_INCREMENT PRIMARY KEY,
 Name VARCHAR(255) NOT NULL,
 Email VARCHAR(255) NOT NULL UNIQUE,
 ContactNumber VARCHAR(20),
-Preferences TEXT
 );
--- Create 'Provider_Profiles' table
-CREATE TABLE Provider_Profiles (
-ProviderID INT AUTO_INCREMENT PRIMARY KEY,
-Name VARCHAR(255) NOT NULL,
-Email VARCHAR(255) NOT NULL UNIQUE,
-ContactNumber VARCHAR(20),
-Qualifications TEXT,
-ServicesOffered TEXT
+-- Create 'Owner_Profiles' table
+CREATE TABLE Owner_Profiles (
+    OwnerID INT AUTO_INCREMENT PRIMARY KEY,
+    ManagementContactName VARCHAR(255) NOT NULL,
+    ManagementContactPhone VARCHAR(20),
 );
 -- Create 'Listings' table
 CREATE TABLE Listings (
     ListingID INT AUTO_INCREMENT PRIMARY KEY,
-    Title VARCHAR(255) NOT NULL, -- Service Name
+    OwnerID INT,
+    Title VARCHAR(255),
+    Description VARCHAR(255),
+    Price INT,
     Telephone VARCHAR(20),
     Email VARCHAR(255),
     StreetAddress VARCHAR(255),
@@ -27,6 +26,8 @@ CREATE TABLE Listings (
     ServiceType VARCHAR(100),
     HoursECE VARCHAR(3),
     AreaUnit VARCHAR(100),
+    ManagementContactName VARCHAR(255) NOT NULL,
+    ManagementContactPhone VARCHAR(20),
     Latitude DECIMAL(9,6),
     Longitude DECIMAL(9,6),
     MaxLicensedPositions INT,
@@ -37,8 +38,10 @@ CREATE TABLE Listings (
     CapacityAge3 INT,
     CapacityAge4 INT,
     CapacityAge5 INT,
-    TotalCapacity INT
+    TotalCapacity INT,
+    FOREIGN KEY (OwnerID) REFERENCES Owner_Profiles(OwnerID),
 );
+
 -- Create 'Reviews' table
 CREATE TABLE Reviews (
 ReviewID INT AUTO_INCREMENT PRIMARY KEY,
@@ -56,7 +59,6 @@ UserID INT,
 ListingID INT,
 MessageType VARCHAR(255),
 MessageContent TEXT,
--- Assuming UserID could be either a ParentID or ProviderID
 FOREIGN KEY (UserID) REFERENCES Parent_Profiles(ParentID),
 FOREIGN KEY (ListingID) REFERENCES Listings(ListingID)
 );
