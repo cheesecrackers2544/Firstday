@@ -9,8 +9,13 @@ ContactNumber VARCHAR(20)
 CREATE TABLE Owner_Profiles (
     OwnerID INT AUTO_INCREMENT PRIMARY KEY,
     ManagementContactName VARCHAR(255) NOT NULL,
-    ManagementContactPhone VARCHAR(20)
+    ManagementContactPhone VARCHAR(20),
+    OwnerEmail VARCHAR(255) UNIQUE,
+    Password VARCHAR(255) NOT NULL,
+    EmailVerified BOOLEAN NOT NULL DEFAULT FALSE,
+    VerificationToken VARCHAR(255)
 );
+
 -- Create 'Listings' table
 CREATE TABLE Listings (
     ListingID INT AUTO_INCREMENT PRIMARY KEY,
