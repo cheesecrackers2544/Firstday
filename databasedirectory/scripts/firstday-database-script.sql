@@ -13,7 +13,6 @@ CREATE TABLE Owner_Profiles (
     OwnerEmail VARCHAR(255) UNIQUE,
     Password VARCHAR(255) NOT NULL,
     EmailVerified BOOLEAN NOT NULL DEFAULT FALSE,
-    VerificationToken VARCHAR(255)
 );
 
 -- Create 'Listings' table
